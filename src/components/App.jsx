@@ -1,16 +1,83 @@
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useEffect, lazy } from 'react';
+import Layout from './Layout';
+import { refreshUser } from '../redux/Auth/operations';
+import { RestrictedRoute } from './RestrictedRoute';
+import { PrivateRoute } from './PrivateRoute';
+import { useAuth } from '../hooks';
+import Loader from './Loader/Loader';
+
+const Home = lazy(() => import('../pages/Home'));
+const Login = lazy(() => import('../pages/Login'));
+const Register = lazy(() => import('../pages/Register'));
+const MainTransactions = lazy(() =>
+  import('../pages/MainTransactions')
+);
+const TransactionsHistory = lazy(() =>
+  import('../pages/TransactionsHistory')
+);
+
 export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+  const dispatch = useDispatch();
+  const {isRefreshing} = useAuth();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
+  return isRefreshing ? (
+    <Loader />
+  ) : (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route
+          index
+          element={
+            <RestrictedRoute
+              component={<Home />}
+              redirectTo="/transactions/expenses"
+            />
+          }
+        />
+
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute
+              component={<Login />}
+              redirectTo="/transactions/expenses"
+            />
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute component={<Register />} redirectTo="/login" />
+          }
+        />
+        <Route
+          path="/transactions/:transactionsType"
+          element={
+            <PrivateRoute
+              component={<MainTransactions />}
+              redirectTo="/login"
+            />
+          }
+        />
+        <Route
+          path="/transactions/history/:transactionsType"
+          element={
+            <PrivateRoute
+              component={<TransactionsHistory />}
+              redirectTo="/login"
+            />
+          }
+        />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Route>
+    </Routes>
   );
 };
+
+// export default App;
