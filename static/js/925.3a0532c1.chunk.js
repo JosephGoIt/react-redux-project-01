@@ -1,0 +1,2 @@
+(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[925],{2436:function(){},9925:function(e,n,t){"use strict";t.r(n),t.d(n,{default:function(){return u}});var r=t(2436),c=t.n(r),a="Register_container__Mc99S",s=t(3329),u=function(){return(0,s.jsx)("div",{className:a,children:(0,s.jsx)(c(),{signUp:!0})})}}}]);
+//# sourceMappingURL=925.3a0532c1.chunk.js.map
