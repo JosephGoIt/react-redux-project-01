@@ -1,7 +1,7 @@
 .containerImg {
     position: relative;
     display: flex;
-    background-image: url('../../assets/images/hero/hero_mobile_@1x.jpg');
+    background-image: url('../../assets/images/hero_mobile_@1x.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
