@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/react-redux-project-01/static/css/main.1cfba751.css",
-    "main.js": "/react-redux-project-01/static/js/main.87545e25.js",
-    "static/css/126.9fbdbc29.chunk.css": "/react-redux-project-01/static/css/126.9fbdbc29.chunk.css",
-    "static/js/126.faf6831a.chunk.js": "/react-redux-project-01/static/js/126.faf6831a.chunk.js",
+    "main.js": "/react-redux-project-01/static/js/main.1b8b0b66.js",
+    "static/css/736.c68ec6a8.chunk.css": "/react-redux-project-01/static/css/736.c68ec6a8.chunk.css",
+    "static/js/736.a86f466c.chunk.js": "/react-redux-project-01/static/js/736.a86f466c.chunk.js",
     "static/css/336.25f3e4a2.chunk.css": "/react-redux-project-01/static/css/336.25f3e4a2.chunk.css",
     "static/js/336.7c38e3db.chunk.js": "/react-redux-project-01/static/js/336.7c38e3db.chunk.js",
     "static/css/925.967d2b1f.chunk.css": "/react-redux-project-01/static/css/925.967d2b1f.chunk.css",
@@ -12,6 +12,12 @@
     "static/js/245.641239a3.chunk.js": "/react-redux-project-01/static/js/245.641239a3.chunk.js",
     "static/css/994.5a786b3c.chunk.css": "/react-redux-project-01/static/css/994.5a786b3c.chunk.css",
     "static/js/994.baa6eee8.chunk.js": "/react-redux-project-01/static/js/994.baa6eee8.chunk.js",
+    "static/media/hero_desktop_@2x.jpg": "/react-redux-project-01/static/media/hero_desktop_@2x.2a6784d6e404e8100441.jpg",
+    "static/media/hero_tablet_@2x.jpg": "/react-redux-project-01/static/media/hero_tablet_@2x.f38ba292d08cab3bc000.jpg",
+    "static/media/hero_mobile_@2x.jpg": "/react-redux-project-01/static/media/hero_mobile_@2x.76d67c6497a01cb877ef.jpg",
+    "static/media/hero_desktop_@1x.jpg": "/react-redux-project-01/static/media/hero_desktop_@1x.ace94764272a5d5b5cb4.jpg",
+    "static/media/hero_tablet_@1x.jpg": "/react-redux-project-01/static/media/hero_tablet_@1x.4da1661d963914b2034d.jpg",
+    "static/media/hero_mobile_@1x.jpg": "/react-redux-project-01/static/media/hero_mobile_@1x.ae9caf391a2cac027c19.jpg",
     "static/media/SuisseIntl-Bold.woff": "/react-redux-project-01/static/media/SuisseIntl-Bold.de95d736320ca1798e64.woff",
     "static/media/SuisseIntl-Regular.woff": "/react-redux-project-01/static/media/SuisseIntl-Regular.aea326c0223e1531fbe9.woff",
     "static/media/SuisseIntl-Bold.woff2": "/react-redux-project-01/static/media/SuisseIntl-Bold.bec7b9dda193a28907ad.woff2",
@@ -20,9 +26,9 @@
     "static/media/images_users_1x@.png": "/react-redux-project-01/static/media/images_users_1x@.c1c11a19d97602915a48.png",
     "index.html": "/react-redux-project-01/index.html",
     "main.1cfba751.css.map": "/react-redux-project-01/static/css/main.1cfba751.css.map",
-    "main.87545e25.js.map": "/react-redux-project-01/static/js/main.87545e25.js.map",
-    "126.9fbdbc29.chunk.css.map": "/react-redux-project-01/static/css/126.9fbdbc29.chunk.css.map",
-    "126.faf6831a.chunk.js.map": "/react-redux-project-01/static/js/126.faf6831a.chunk.js.map",
+    "main.1b8b0b66.js.map": "/react-redux-project-01/static/js/main.1b8b0b66.js.map",
+    "736.c68ec6a8.chunk.css.map": "/react-redux-project-01/static/css/736.c68ec6a8.chunk.css.map",
+    "736.a86f466c.chunk.js.map": "/react-redux-project-01/static/js/736.a86f466c.chunk.js.map",
     "336.25f3e4a2.chunk.css.map": "/react-redux-project-01/static/css/336.25f3e4a2.chunk.css.map",
     "336.7c38e3db.chunk.js.map": "/react-redux-project-01/static/js/336.7c38e3db.chunk.js.map",
     "925.967d2b1f.chunk.css.map": "/react-redux-project-01/static/css/925.967d2b1f.chunk.css.map",
@@ -34,6 +40,6 @@
   },
   "entrypoints": [
     "static/css/main.1cfba751.css",
-    "static/js/main.87545e25.js"
+    "static/js/main.1b8b0b66.js"
   ]
 }
