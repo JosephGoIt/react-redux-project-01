@@ -1,12 +1,14 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { whenProd } = require("@craco/craco");
 
 module.exports = {
   webpack: {
     plugins: {
       add: [
-        new MiniCssExtractPlugin({
-          ignoreOrder: true,
-        }),
+        ...whenProd(() => [
+          new require('mini-css-extract-plugin')({
+            ignoreOrder: true,
+          })
+        ], []),
       ],
     },
   },
