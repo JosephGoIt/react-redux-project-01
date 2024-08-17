@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import s from './UserSetsFormList.module.css';
 
-export const UserSetsFormSelectList = ({
+export const UserSetsFormList = ({
   options,
   handleChose,
   boxRef,

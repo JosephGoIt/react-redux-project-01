@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { changeUserAvatar, changeUserInfo, deleteUserAvatar,fetchCurrentUser } from './operations';
+import { changeUserAvatar, changeUserInfo, deleteUserAvatar, fetchCurrentUser } from './operations';
 import { logIn, logOut } from '../../redux/Auth/operations';
 
 const initialState = {

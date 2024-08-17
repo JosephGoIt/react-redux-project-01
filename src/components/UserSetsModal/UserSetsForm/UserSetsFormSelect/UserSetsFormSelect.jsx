@@ -1,8 +1,7 @@
 import { useRef, useState } from 'react';
-// import { UserSetsFormList } from './UserSetsFormList';
+import { UserSetsFormList } from './UserSetsFormList';
 import { Icon } from '../../../Icon/Icon';
 import { choseLabel, options } from '../../../../javascripts/choseLabel';
-
 import s from './UserSetsFormSelect.module.css';
 
 export const UserSetsFormSelect = ({
@@ -34,7 +33,7 @@ export const UserSetsFormSelect = ({
         />
       </div>
       {isOpen && (
-        <UserSetsFormSelect
+        <UserSetsFormList
           options={options}
           handleChose={handleChose}
           boxRef={box}
