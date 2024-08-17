@@ -37,6 +37,12 @@ export const Modal = ({ children, pd, toggleModal, anotherModal = false }) => {
     [`${s.logout}`]: pd === 80,
   });
 
+  // Check if the modalRoot element is valid
+  if (!modalRoot) {
+    console.error('Modal root container not found');
+    return null; // Return null if the modal root is not found
+  }
+
   return createPortal(
     <div className={s.wrapper} onClick={handleClick}>
       <div className={modalClass}>

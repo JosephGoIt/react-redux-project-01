@@ -36,7 +36,7 @@ const MainTransactions = () => {
     <div className="container">
       <div className={s.wrapper}>
         <div className={s.titleWrapper}>
-          <h2 className={s.title}>Log</h2>
+          <h2 className={s.title}>{capitalizedType.slice(0, -1)} Log</h2>
           <p className={s.descr}>
             Capture and organize every penny spent with ease! A clear view of
             your financial habits at your fingertips.
