@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://JosephGoIt.github.io/react-redux-project-01/",
   "dependencies": {
+    "@craco/craco": "^7.1.0",
     "@hookform/resolvers": "^3.9.0",
     "@redux-devtools/extension": "^3.3.0",
     "@reduxjs/toolkit": "^2.2.7",
@@ -36,7 +37,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint:js": "eslint src/**/*.{js,jsx}"
+    // "lint:js": "eslint src/**/*.{js,jsx}"
   },
   "eslintConfig": {
     "extends": [
