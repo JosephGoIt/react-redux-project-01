@@ -37,14 +37,14 @@ const TransactionsHistory = () => {
   const dispatch = useDispatch();
   const filterDate = useSelector(selectDate);
 
-  let text = 'All Expense';
-  let description =
-    'View and manage every transaction seamlessly! Your entire financial landscape, all in one place.';
-  if (transactionsType === 'incomes') {
-    text = 'All incomes';
-    description =
-      'Track and celebrate every bit of earnings effortlessly! Gain insights into your total revenue in a snap.';
-  }
+  // let text = 'All Expense';
+  // let description =
+  //   'View and manage every transaction seamlessly! Your entire financial landscape, all in one place.';
+  // if (transactionsType === 'incomes') {
+  //   text = 'All incomes';
+  //   description =
+  //     'Track and celebrate every bit of earnings effortlessly! Gain insights into your total revenue in a snap.';
+  // }
 
   useEffect(() => {
     if (filterDate) {
