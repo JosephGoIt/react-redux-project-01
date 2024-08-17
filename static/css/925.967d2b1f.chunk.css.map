@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/925.967d2b1f.chunk.css","mappings":"AAAA,0CACI,2BACE,qBACF,CACF","sources":["pages/Register.module.css"],"sourcesContent":["@media only screen and (min-width: 1440px) {\n    .container {\n      padding: 0 121px 100px;\n    }\n  }"],"names":[],"sourceRoot":""}
