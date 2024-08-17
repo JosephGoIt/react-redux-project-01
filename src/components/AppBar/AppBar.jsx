@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import Logo from './Logo/Logo';
 import BurgerMenuBtn from './BurgerMenuBtn/BurgerMenuBtn';
 import BurgerMenu from './BurgerMenu/BurgerMenu';
-import { selectIsLoggedIn } from '../../redux/Auth/selectors';
+import { selectIsLoggedIn } from '../../redux/Auth/authSlice';
 import TransactionHistoryNav from './TransactionHistoryNav/TransactionHistoryNav';
 import UserBarBtn from './UserBarBtn/UserBarBtn';
 import { useModal } from 'hooks';

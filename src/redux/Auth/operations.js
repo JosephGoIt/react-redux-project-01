@@ -30,10 +30,6 @@ export const logIn = createAsyncThunk(
   }
 );
 
-/*
- * POST @ /auth/logout
- * headers: Authorization: Bearer token
- */
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
     await api.get('/auth/logout');
@@ -43,10 +39,7 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   }
 });
 
-/*
- * GET @ /auth/refresh
- * headers: Authorization: Bearer token
- */
+
 export const refreshUser = createAsyncThunk(
   'auth/refresh',
   async (_, thunkAPI) => {
