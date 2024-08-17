@@ -5,7 +5,7 @@ import Layout from './Layout/Layout';
 import { refreshUser } from '../redux/Auth/operations';
 import { RestrictedRoute } from './Routes/RestrictedRoute';
 import { PrivateRoute } from './Routes/PrivateRoute';
-import { selectIsRefreshing } from '../redux/Auth/authSlice';
+import { selectIsRefreshing, selectIsLoggedIn } from '../redux/Auth/authSlice';
 import Loader from './Loader/Loader';
 
 const Home = lazy(() => import('../pages/Home'));
@@ -22,20 +22,24 @@ const TransactionsHistory = lazy(() =>
 export const App = () => {
   const dispatch = useDispatch();
   const {isRefreshing} = useSelector(selectIsRefreshing);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return isRefreshing ? (
-    <Loader />
-  ) : (
+  if (isRefreshing) {
+    return <Loader />;
+  }
+
+  return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route
           index
           element={
             <RestrictedRoute
+              isLoggedIn={isLoggedIn}
               component={<Home />}
               redirectTo="/transactions/expenses"
             />
@@ -46,6 +50,7 @@ export const App = () => {
           path="/login"
           element={
             <RestrictedRoute
+              isLoggedIn={isLoggedIn}
               component={<Login />}
               redirectTo="/transactions/expenses"
             />
@@ -54,13 +59,16 @@ export const App = () => {
         <Route
           path="/register"
           element={
-            <RestrictedRoute component={<Register />} redirectTo="/login" />
+            <RestrictedRoute
+            isLoggedIn={isLoggedIn}
+            component={<Register />} redirectTo="/login" />
           }
         />
         <Route
           path="/transactions/:transactionsType"
           element={
             <PrivateRoute
+              isLoggedIn={isLoggedIn}
               component={<MainTransactions />}
               redirectTo="/login"
             />
@@ -70,6 +78,7 @@ export const App = () => {
           path="/transactions/history/:transactionsType"
           element={
             <PrivateRoute
+              isLoggedIn={isLoggedIn}
               component={<TransactionsHistory />}
               redirectTo="/login"
             />
