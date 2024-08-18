@@ -67,3 +67,26 @@
       top: 65px;
     }
   }
+  
+  .userPanelBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+  }
+
+  .userPanelBtn:hover .userIcon {
+    stroke: #0ef387;
+  }
+  .userPanelBtn:hover .logOutIcon {
+    stroke: #0ef387;
+  }
+
+  .userPanelBtn:hover .userPanelLinkText {
+    color: #fafafa;
+  }
+  
+  .icon {
+    /* Your styles here */
+  }
+  

@@ -1,69 +1,46 @@
 import { Link, useParams } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-import style from './TransactionHistoryNav.module.css';
 import { useEffect } from 'react';
+import style from './TransactionHistoryNav.module.css';
 
 const TransactionsHistoryNav = ({
   activeButton,
   handleButtonAndToggleMenu,
 }) => {
   const isMobileScreen = useMediaQuery({ query: '(min-width: 320px)' });
-
   const { transactionsType } = useParams();
 
   useEffect(() => {
     handleButtonAndToggleMenu(transactionsType);
   }, [transactionsType, handleButtonAndToggleMenu]);
 
-  const changeActiveButtonStyleDesktop = buttonName => {
-    return activeButton === buttonName
+  const getButtonStyle = (buttonName, currentPage) =>
+    activeButton === buttonName || window.location.pathname === currentPage
       ? style.navBtnActive
       : style.mobileNavBtn;
-  };
-
-  const changeActiveButtonStyleMobile = currentPage => {
-    const currentUrl = window.location.pathname;
-
-    if (currentUrl === currentPage) {
-      return style.navBtnActive;
-    } else {
-      return style.mobileNavBtn;
-    }
-  };
 
   return (
     <div className={style.buttonWrapper}>
       <Link to="/transactions/history/expenses">
         <button
-          className={
-            isMobileScreen
-              ? changeActiveButtonStyleMobile(
-                  '/ReactAvengers/transactions/history/expenses'
-                )
-              : changeActiveButtonStyleDesktop('expense')
-          }
-          onClick={() => {
-            handleButtonAndToggleMenu('expense');
-          }}
+          className={getButtonStyle(
+            'expense',
+            '/react-redux-project-01/transactions/history/expenses'
+          )}
+          onClick={() => handleButtonAndToggleMenu('expense')}
         >
-          All Expense
+          {isMobileScreen ? 'All Expense' : 'Expense'}
         </button>
       </Link>
-
       <Link to="/transactions/history/incomes">
         <button
-          className={
-            isMobileScreen
-              ? changeActiveButtonStyleMobile(
-                  '/ReactAvengers/transactions/history/incomes'
-                )
-              : changeActiveButtonStyleDesktop('income')
-          }
-          onClick={() => {
-            handleButtonAndToggleMenu('income');
-          }}
+          className={getButtonStyle(
+            'income',
+            '/react-redux-project-01/transactions/history/incomes'
+          )}
+          onClick={() => handleButtonAndToggleMenu('income')}
         >
-          All Incomes
+          {isMobileScreen ? 'All Incomes' : 'Incomes'}
         </button>
       </Link>
     </div>

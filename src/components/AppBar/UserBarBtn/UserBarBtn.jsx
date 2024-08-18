@@ -11,20 +11,12 @@ const UserBarBtn = ({
   closeMenu,
   isMenuOpen,
 }) => {
-  const { name } = useSelector(selectUser);
-  const { avatarUrl } = useSelector(selectUser);
-
+  const { name, avatarUrl } = useSelector(selectUser);
   const [isOpen, setIsOpen] = useState(false);
-
   const userBtnRef = useRef(null);
 
-  const toggleUserBarBtn = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closeUserBar = () => {
-    setIsOpen(false);
-  };
+  const toggleUserBarBtn = () => setIsOpen(!isOpen);
+  const closeUserBar = () => setIsOpen(false);
 
   return (
     <div ref={userBtnRef} className={style.userBarBtnWrapper}>
@@ -33,7 +25,7 @@ const UserBarBtn = ({
           {avatarUrl ? (
             <img
               src={avatarUrl}
-              alt={name + 'avatar'}
+              alt={`${name} avatar`}
               className={style.userLogo}
             />
           ) : (
@@ -42,15 +34,11 @@ const UserBarBtn = ({
             </span>
           )}
         </div>
-
-        <p className={style.userName}>
-          {name ? name : 'Your Name'}
-        </p>
-        {!isOpen ? (
-          <Icon name="chevron-down" className={style.chevrone} />
-        ) : (
-          <Icon name="chevron-up" className={style.chevrone} />
-        )}
+        <p className={style.userName}>{name || 'Your Name'}</p>
+        <Icon
+          name={isOpen ? 'chevron-up' : 'chevron-down'}
+          className={style.chevrone}
+        />
       </button>
       {isOpen && (
         <UserPanel
