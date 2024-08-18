@@ -11,13 +11,8 @@ import Loader from './Loader/Loader';
 const Home = lazy(() => import('../pages/Home'));
 const Login = lazy(() => import('../pages/Login'));
 const Register = lazy(() => import('../pages/Register'));
-const MainTransactions = lazy(() =>
-  import('../pages/MainTransactions')
-);
-
-const TransactionsHistory = lazy(() =>
-  import('../pages/TransactionsHistory')
-);
+const MainTransactions = lazy(() => import('../pages/MainTransactions'));
+const TransactionsHistory = lazy(() => import('../pages/TransactionsHistory'));
 
 export const App = () => {
   const dispatch = useDispatch();

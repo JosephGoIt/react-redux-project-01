@@ -1,5 +1,5 @@
 export const options = [
-    { value: 'php', label: '₱ PHP' },
+    { value: 'uah', label: '₱ PHP' },
     { value: 'usd', label: '$ USD' },
     { value: 'eur', label: '€ EUR' },
   ];

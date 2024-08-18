@@ -9,7 +9,7 @@ export * from './PieChart/PieChart.jsx';
 export * from './UserSetsModal/UserSetsModal';
 export * from './BgImageWrapper/BgImageWrapper.jsx';
 export * from './RegisterForm/RegisterForm.jsx';
-export * from './TransactionForm/TransactionForm.jsx';
+// export * from './TransactionForm/TransactionForm.jsx';
 export * from './Loader/Loader.jsx';
 export * from './Logout/Logout.jsx';
 export * from './UniversalButton/UniversalButton.jsx';

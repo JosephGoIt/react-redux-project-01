@@ -1,6 +1,6 @@
 export function getCurrencyChar(currency) {
     switch (currency) {
-      case 'php':
+      case 'uah':
         return '₱';
       case 'usd':
         return '$';
