@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { useRef } from 'react';
+import { useOutsideClick } from '../../../hooks/useOutsideClick';
 import style from './UserPanel.module.css';
 import { Icon } from '../../Icon/Icon';
 
@@ -11,60 +12,19 @@ const UserPanel = ({
   toggleProfileModal,
   toggleLogOutModal,
 }) => {
-  useEffect(() => {
-    const handleClickOutside = event => {
-      if (userBtnRef.current && !userBtnRef.current.contains(event.target)) {
-        toggleUserBarBtn();
-      }
-    };
+  const panelRef = useRef(null);
 
-    const handleKeyPress = event => {
-      if (event.key === 'Escape') {
-        closeUserBar();
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('keydown', handleKeyPress);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleKeyPress);
-    };
-  }, [closeUserBar, toggleUserBarBtn, userBtnRef]);
-
-  const handleProfileClick = () => {
-    toggleProfileModal();
-    closeUserBar();
-    if (isMenuOpen) {
-      closeMenu();
-    }
-  };
-
-  const handleLogOutClick = () => {
-    toggleLogOutModal();
-    closeUserBar();
-
-    if (isMenuOpen) {
-      closeMenu();
-    }
-  };
+  useOutsideClick(panelRef, toggleUserBarBtn);
 
   return (
-    <div className={style.userPanelBody}>
-      <button
-        onClick={handleProfileClick}
-        className={style.userPanelItemsWrapper}
-      >
+    <div ref={panelRef} className={style.userPanelBody}>
+      <button className={style.userPanelBtn} onClick={toggleProfileModal}>
         <Icon name="user" className={style.userIcon} />
-        <p className={style.userPanelLinkText}>Profile settings</p>
+        <span>Edit Profile</span>
       </button>
-      <button
-        onClick={handleLogOutClick}
-        className={style.userPanelItemsWrapper}
-      >
-        <Icon name="log-out" className={style.logOutIcon} />
-        <p className={style.userPanelLinkText}>Log out</p>
+      <button className={style.userPanelBtn} onClick={toggleLogOutModal}>
+        <Icon name="logout" className={style.logOutIcon} />
+        <span>Log Out</span>
       </button>
     </div>
   );

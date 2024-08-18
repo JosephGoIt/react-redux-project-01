@@ -13,37 +13,22 @@ const BurgerMenu = ({
   toggleLogOutModal,
 }) => {
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.classList.add(style.noScroll);
-    } else {
-      document.body.classList.remove(style.noScroll);
-    }
-    return () => {
-      document.body.classList.remove(style.noScroll);
-    };
+    document.body.classList.toggle(style.noScroll, isMenuOpen);
+    return () => document.body.classList.remove(style.noScroll);
   }, [isMenuOpen]);
-
-  const handleBackdrop = () => {
-    toggleMenu();
-  };
 
   useEffect(() => {
     const handleKeyPress = event => {
-      if (event.key === 'Escape') {
-        closeMenu();
-      }
+      if (event.key === 'Escape') closeMenu();
     };
 
     document.addEventListener('keydown', handleKeyPress);
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyPress);
-    };
+    return () => document.removeEventListener('keydown', handleKeyPress);
   }, [isMenuOpen, closeMenu]);
 
   return (
     <>
-      <div className={style.backdrop} onClick={handleBackdrop}></div>
+      <div className={style.backdrop} onClick={toggleMenu}></div>
       <div className={style.mobileMenu}>
         <div className={style.userBarBtnWrapper}>
           <UserBarBtn
