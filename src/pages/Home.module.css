@@ -129,11 +129,11 @@
     padding: 14px 44px;
     width: 138px;
     height: 44px;
-    font-weight: 400;
+    font-weight: 600;
     font-size: var(--font-size-small);
     text-align: center;
     letter-spacing: -0.02em;
-    color: var(--main-text-color);
+    color: var(--text-black-color);
     transition: background-color var(--transition-delay) var(--transition);
   
     &:hover {
